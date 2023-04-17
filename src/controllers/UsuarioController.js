@@ -34,8 +34,7 @@ const deleteUser = async (req,res)=>{
     const id = req.params.id;
     const response = await pool.query('DELETE FROM usuario WHERE email = $1',[id]);
     res.status(200).json(`User "${id}" deleted succesfully`);
-}
-
+};
 
 module.exports = {
     getUsers,
