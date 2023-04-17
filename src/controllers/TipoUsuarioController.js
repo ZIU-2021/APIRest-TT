@@ -1,13 +1,4 @@
-//Connection to the DB
-const {Pool} = require('pg');
-
-//Connection data
-const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    password: '12345',
-    database: 'TT'
-});
+const {pool} = require('../dbConnection/dbConnection');
 
 //Get all the users types
 const getUsers = async (req,res) =>{
