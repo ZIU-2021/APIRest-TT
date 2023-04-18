@@ -19,4 +19,13 @@ router.post('/user',createUser);
 router.get('/user/:id',getUserById);
 router.delete('/user/:id',deleteUser);
 
+//Import from TipoProyectoController
+const {getTipoProyecto, createTipoProyecto, updateTipoProyecto, deleteTipoProyecto} = require('../controllers/TipoProyectoController');
+
+//Router from TipoProyectoController
+router.get('/tipoproyecto',getTipoProyecto);
+router.post('/tipoproyecto',createTipoProyecto);
+router.put('/tipoproyecto/:id',updateTipoProyecto);
+router.delete('/tipoproyecto/:id',deleteTipoProyecto);
+
 module.exports=router;
