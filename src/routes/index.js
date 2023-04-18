@@ -28,4 +28,13 @@ router.post('/tipoproyecto',createTipoProyecto);
 router.put('/tipoproyecto/:id',updateTipoProyecto);
 router.delete('/tipoproyecto/:id',deleteTipoProyecto);
 
+//Import from NivelControlles
+const {getNivel, createNivel, deleteNivel} = require('../controllers/NivelController');
+
+//Router from NivelController
+router.get('/nivel',getNivel);
+router.post('/nivel',createNivel);
+router.delete('/nivel/:id',deleteNivel);
+
+
 module.exports=router;

@@ -1,10 +1,13 @@
+//Require to data base connection
 const {pool} = require('../dbConnection/dbConnection');
 
+//Get all types of project
 const getTipoProyecto = async (req,res) =>{
     const response = await pool.query('SELECT * FROM tipoproyecto');
     res.json(response.rows);
 };
 
+//Create a new type of project
 const createTipoProyecto = async (req,res) =>{
     const {idtipoproyecto, nombretipoproyecto} = req.body;
     const response = await pool.query('INSERT INTO tipoproyecto (idtipoproyecto, nombretipoproyecto) VALUES ($1, $2)',[
@@ -20,6 +23,7 @@ const createTipoProyecto = async (req,res) =>{
     });
 };
 
+//Update a type of project
 const updateTipoProyecto = async (req,res)=>{
     const id = req.params.id;
     const {idtipoproyecto, nombretipoproyecto} = req.body;
@@ -30,6 +34,7 @@ const updateTipoProyecto = async (req,res)=>{
     res.json(`nombreTipoProyecto with the id ${id} updated succesfully`);
 };
 
+//Delete a type of project
 const deleteTipoProyecto = async (req,res)=>{
     const id = req.params.id;
     const response = await pool.query('DELETE FROM tipoproyecto WHERE idtipoproyecto =$1',[id]);
