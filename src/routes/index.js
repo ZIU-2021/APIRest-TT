@@ -46,4 +46,11 @@ router.get('/prod',getProd);
 router.post('/prod',createProd);
 router.delete('/prod/:id',deleteProd);
 
+//Import from tipoUFPController
+const {getTipoUFP,createTipoUFP,deleteTipoUFP} = require('../controllers/TipoUFPController');
+//Router from TipoUFPController
+router.get('/tipoufp',getTipoUFP);
+router.post('/tipoufp',createTipoUFP);
+router.delete('/tipoufp/:id',deleteTipoUFP);
+
 module.exports=router;
