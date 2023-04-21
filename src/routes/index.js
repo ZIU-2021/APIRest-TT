@@ -34,10 +34,16 @@ router.delete('/nivel/:id',deleteNivel);
 
 //Import from TipoProdController
 const {getTipoProd, createTipoProd, deleteTipoProd} = require('../controllers/TipoProdController');
-
+//Router from ProdController
 router.get('/tipoprod',getTipoProd);
 router.post('/tipoprod',createTipoProd);
 router.delete('/tipoprod/:id',deleteTipoProd);
 
+//Import from Prodcontroller
+const { getProd, createProd, deleteProd} = require('../controllers/ProdController');
+//Router from ProdController
+router.get('/prod',getProd);
+router.post('/prod',createProd);
+router.delete('/prod/:id',deleteProd);
 
 module.exports=router;
