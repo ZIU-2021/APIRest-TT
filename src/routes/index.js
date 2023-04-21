@@ -53,4 +53,12 @@ router.get('/tipoufp',getTipoUFP);
 router.post('/tipoufp',createTipoUFP);
 router.delete('/tipoufp/:id',deleteTipoUFP);
 
+//Import from tipoFEEController
+const {getTipoFEE,createTipoFEE,deleteTipoFEE} = require('../controllers/TipoFEEController');
+//Router from TipoUFPController
+router.get('/tipofee',getTipoFEE);
+router.post('/tipofee',createTipoFEE);
+router.delete('/tipofee/:id',deleteTipoFEE);
+
+
 module.exports=router;
