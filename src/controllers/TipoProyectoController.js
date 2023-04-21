@@ -1,5 +1,5 @@
 //Require to data base connection
-const {pool} = require('../dbConnection/dbConnection');
+const {pool} = require('../dbInformation/dbConnection');
 
 //Get all types of project
 const getTipoProyecto = async (req,res) =>{

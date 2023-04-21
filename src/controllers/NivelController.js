@@ -1,5 +1,5 @@
 //Require to the databse connection
-const {pool} = require('../dbConnection/dbConnection');
+const {pool} = require('../dbInformation/dbConnection');
 
 //Get all the information of the table
 const getNivel = async (req,res) =>{

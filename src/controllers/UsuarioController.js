@@ -1,5 +1,5 @@
 //Require to the database
-const {pool} = require('../dbConnection/dbConnection');
+const {pool} = require('../dbInformation/dbConnection');
 
 //Get all the Users
 const getUsers = async (req,res) =>{

@@ -1,5 +1,5 @@
 //Require to the data base connection
-const {pool} = require('../dbConnection/dbConnection');
+const {pool} = require('../dbInformation/dbConnection');
 
 //Get all the users types
 const getUserType = async (req,res) =>{
