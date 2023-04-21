@@ -60,5 +60,28 @@ router.get('/tipofee',getTipoFEE);
 router.post('/tipofee',createTipoFEE);
 router.delete('/tipofee/:id',deleteTipoFEE);
 
+//Import from tipoFactorExponencialEscalaController
+const {getTipoFactorEE, createTipoFactorEE, deleteTipoFactorEE} = require('../controllers/FactorEsponencialEscalaController');
+//Router from tipoFactorExponencialEscalaController
+router.get('/tipofactoree',getTipoFactorEE);
+router.post('/tipofactoree',createTipoFactorEE);
+router.delete('/tipofactoree/:id',deleteTipoFactorEE);
+
+//Import from tipoMEController
+const {getTipoME, createTipoME, deleteTipoME} = require('../controllers/TipoMEController');
+//Router from tipoFactorExponencialEscalaController
+router.get('/tipome',getTipoME);
+router.post('/tipome',createTipoME);
+router.delete('/tipome/:id',deleteTipoME);
+
+//Import from MultiplicadorEsfuerzoController
+const {getMultiplicadorE, createMultiplicadorE, deleteMultiplicadorE} = require('../controllers/MultiplicadorEsfuerzoController');
+//Router from MultiplicadorEsfuerzoControllerEscalaController
+router.get('/multiplicadoresfuerzo',getMultiplicadorE);
+router.post('/multiplicadoresfuerzo',createMultiplicadorE);
+router.delete('/multiplicadoresfuerzo/:id',deleteMultiplicadorE);
+
+
+
 
 module.exports=router;
