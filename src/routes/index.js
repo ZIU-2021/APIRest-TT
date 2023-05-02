@@ -81,6 +81,68 @@ router.get('/multiplicadoresfuerzo',getMultiplicadorE);
 router.post('/multiplicadoresfuerzo',createMultiplicadorE);
 router.delete('/multiplicadoresfuerzo/:id',deleteMultiplicadorE);
 
+//Import from ProyectoController
+const {getProyecto,createProyecto,deleteProyecto} = require('../controllers/ProyectoController');
+//Router from ProyectoController
+router.get('/proyecto',getProyecto);
+router.post('/proyecto',createProyecto);
+router.delete('/proyecto/:id',deleteProyecto);
+
+//Import from ProyectoController
+const {getMEProyecto,createMEProyecto,deleteMEProyecto} = require('../controllers/MEPRoyectoController');
+//Router from ProyectoController
+router.get('/meproyecto',getMEProyecto);
+router.post('/meproyecto',createMEProyecto);
+router.delete('/meproyecto/:id',deleteMEProyecto);
+
+//Import from ComposicionAplicacionController
+const {getCompApp,createCompApp,deleteCompApp} = require('../controllers/ComposicionAplicacionController');
+//Router from ComposicionAplicacionController
+router.get('/compapp',getCompApp);
+router.post('/compapp',createCompApp);
+router.delete('/compapp/:id',deleteCompApp);
+
+//Import from ProdCompAppController
+const {getProdCompApp,createProdCompApp,deleteProdCompApp} = require('../controllers/ProdCompAppController');
+//Router from ComposicionAplicacionController
+router.get('/prodcompapp',getProdCompApp);
+router.post('/prodcompapp',createProdCompApp);
+router.delete('/prodcompapp/:id',deleteProdCompApp);
+
+//Import from DisenoTempranoController
+const {getDisTemp, createDisTemp, deleteDisTemp} = require('../controllers/DisenoTempranoController');
+//Router from ComposicionAplicacionController
+router.get('/distemp',getDisTemp);
+router.post('/distemp',createDisTemp);
+router.delete('/distemp/:id',deleteDisTemp);
+
+//Import from PuntoFuncionController
+const {getPuntFunc, createPuntFunc, deletePuntFunc} = require('../controllers/PuntoFuncController');
+//Router from PuntoFuncionController
+router.get('/puntfunc',getPuntFunc);
+router.post('/puntfunc',createPuntFunc);
+router.delete('/puntfunc/:id',deletePuntFunc);
+
+//Import from TcfController
+const {getTCF, createTCF, deleteTCF} = require('../controllers/TcfController');
+//Router from TcfController
+router.get('/tcf',getTCF);
+router.post('/tcf',createTCF);
+router.delete('/tcf/:id',deleteTCF);
+
+//Import from PostArqController
+const {getPostArq, createPostArq, deletePostArq} = require('../controllers/PostArqController');
+//Router from PostArqController
+router.get('/postarq',getPostArq);
+router.post('/postarq',createPostArq);
+router.delete('/postarq/:id',deletePostArq);
+
+//Import from CosmicController
+const {getCosmic, createCosmic, deleteCosmic} = require('../controllers/CosmicController');
+//Router from CosmicController
+router.get('/cosmic',getCosmic);
+router.post('/cosmic',createCosmic);
+router.delete('/cosmic/:id',deleteCosmic);
 
 
 
