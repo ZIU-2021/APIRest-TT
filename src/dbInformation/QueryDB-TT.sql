@@ -101,6 +101,7 @@ CREATE TABLE IF NOT EXISTS Cosmic (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS PuntoFuncionCosmic (
   idPuntoFuncionCosmic INT NOT NULL,
+  nombre_pf VARCHAR (60),
   entradas_pf INT NOT NULL,
   salidas_pf INT NOT NULL,
   lecturas_pf INT NOT NULL,
@@ -175,30 +176,30 @@ CREATE TABLE IF NOT EXISTS TipoFEE (
 CREATE TABLE IF NOT EXISTS FactorExponencialEscala (
   idFEE INT NOT NULL,
   valorfactor INT NOT NULL,
-  Nivel_idNivel INT NOT NULL,
-  TipoFEE_idTipoFEE INT NOT NULL,
+  idNivel INT NOT NULL,
+  idTipoFEE INT NOT NULL,
   PRIMARY KEY (idFEE),
-  FOREIGN KEY (Nivel_idNivel) REFERENCES Nivel (idNivel),
-  FOREIGN KEY (TipoFEE_idTipoFEE) REFERENCES TipoFEE (idTipoFEE)
+  FOREIGN KEY (idNivel) REFERENCES Nivel (idNivel),
+  FOREIGN KEY (idTipoFEE) REFERENCES TipoFEE (idTipoFEE)
 );
 -- -----------------------------------------------------
 -- Table `mydb`.`TipoUFP`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS TipoUFP (
-  idTipoUPF INT NOT NULL,
-  nombreTipoUPF VARCHAR(30) NOT NULL,
-  PRIMARY KEY (idTipoUPF)
+  idTipoUFP INT NOT NULL,
+  nombreTipoUFP VARCHAR(30) NOT NULL,
+  PRIMARY KEY (idTipoUFP)
 );
 -- -----------------------------------------------------
 -- Table `mydb`.`PesoFactorComplejidad`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS PesoFactorComplejidad (
   peso_pfc INT NOT NULL,
-  Nivel_idNivel INT NOT NULL,
-  idTipoUPF INT NOT NULL,
-  PRIMARY KEY (Nivel_idNivel),
-  FOREIGN KEY (Nivel_idNivel) REFERENCES Nivel (idNivel),
-  FOREIGN KEY (idTipoUPF) REFERENCES TipoUFP (idTipoUPF)
+  idNivel INT NOT NULL,
+  idTipoUFP INT NOT NULL,
+  PRIMARY KEY (idNivel),
+  FOREIGN KEY (idNivel) REFERENCES Nivel (idNivel),
+  FOREIGN KEY (idTipoUFP) REFERENCES TipoUFP (idTipoUFP)
 );
 -- -----------------------------------------------------
 -- Table `mydb`.`PuntoFuncion`
@@ -228,16 +229,17 @@ CREATE TABLE IF NOT EXISTS TCF (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS UFP (
   idUFP INT NOT NULL,
+  nombre_UFP VARCHAR (60),
   det_UFP INT NOT NULL,
   ret_UFP INT NULL,
   ftr_UFP INT NULL,
   Nivel_idNivel INT NOT NULL,
   idPuntoFuncion INT NOT NULL,
-  idTipoUPF INT NOT NULL,
+  idTipoUFP INT NOT NULL,
   PRIMARY KEY (idUFP),
   FOREIGN KEY (Nivel_idNivel) REFERENCES Nivel (idNivel),
   FOREIGN KEY (idPuntoFuncion) REFERENCES PuntoFuncion (idPuntoFuncion),
-  FOREIGN KEY (idTipoUPF) REFERENCES TipoUFP (idTipoUPF)
+  FOREIGN KEY (idTipoUFP) REFERENCES TipoUFP (idTipoUFP)
 );
 -- -----------------------------------------------------
 -- Table `mydb`.`Prod_ComposicionAplicacion`
