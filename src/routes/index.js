@@ -165,6 +165,13 @@ router.get('/pfc',getPFC);
 router.post('/pfc',createPFC);
 router.delete('/pfc/:id',deletePFC);
 
+//Import from PuntoFuncCosmicController
+const {getPuntFuncCosmic, createPuntFuncCosmic, deletePuntFuncCosmic} = require('../controllers/PuntoFuncCosmicController');
+//Router from PuntoFuncConsmicController
+router.get('/pfcosmic',getPuntFuncCosmic);
+router.post('/pfcosmic',createPuntFuncCosmic);
+router.delete('/pfcosmic/:id',deletePuntFuncCosmic);
+
 
 
 module.exports=router;
