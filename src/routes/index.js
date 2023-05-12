@@ -145,9 +145,25 @@ router.post('/cosmic',createCosmic);
 router.delete('/cosmic/:id',deleteCosmic);
 
 //Import from UFPController
-const { getUFP } = require('../controllers/UFPController');
+const { getUFP, createUFP, deleteUFP } = require('../controllers/UFPController');
 //Router from UFP Controller
 router.get('/ufp',getUFP);
+router.post('/ufp',createUFP);
+router.delete('/ufp/:id',deleteUFP);
+
+//Import from FEEController
+const {getFEE,createFEE,deleteFEE} = require('../controllers/FEEController');
+//Router from FEEController
+router.get('/fee',getFEE);
+router.post('/fee',createFEE);
+router.delete('/fee/:id',deleteFEE);
+
+//Import from PesoFacCompController
+const {getPFC, createPFC, deletePFC} = require('../controllers/PesoFacCompControler');
+//Router from PesoFacCompController
+router.get('/pfc',getPFC);
+router.post('/pfc',createPFC);
+router.delete('/pfc/:id',deletePFC);
 
 
 
