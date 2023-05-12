@@ -172,6 +172,4 @@ router.get('/pfcosmic',getPuntFuncCosmic);
 router.post('/pfcosmic',createPuntFuncCosmic);
 router.delete('/pfcosmic/:id',deletePuntFuncCosmic);
 
-
-
 module.exports=router;
