@@ -144,6 +144,11 @@ router.get('/cosmic',getCosmic);
 router.post('/cosmic',createCosmic);
 router.delete('/cosmic/:id',deleteCosmic);
 
+//Import from UFPController
+const { getUFP } = require('../controllers/UFPController');
+//Router from UFP Controller
+router.get('/ufp',getUFP);
+
 
 
 module.exports=router;

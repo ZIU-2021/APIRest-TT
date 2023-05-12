@@ -8,15 +8,15 @@ const getTipoFactorEE = async (req,res) =>{
 
 //Create a new level on table Nivel
 const createTipoFactorEE = async (req,res) =>{
-    const {idfee,nivel_idnivel,tipofee_idtipofee,valorfactor} = req.body;
-    const response = await pool.query('INSERT INTO factorexponencialescala (idfee,nivel_idnivel,tipofee_idtipofee,valorfactor) VALUES ($1,$2,$3,$4)',[
+    const {idfee,valorfactor,idnivel,idtipofee} = req.body;
+    const response = await pool.query('INSERT INTO factorexponencialescala (idfee,valorfactor,idnivel,idtipofee) VALUES ($1,$2,$3,$4)',[
         idfee,
-        nivel_idnivel,
-        tipofee_idtipofee,
-        valorfactor]);
+        valorfactor,
+        idnivel,
+        idtipofee]);
     res.json({
         message:'Tipo Factor EE added succcesfully',
-        data:{idfee,nivel_idnivel,tipofee_idtipofee,valorfactor}
+        data:{idfee,valorfactor,idnivel,idtipofee}
     });
 };
 
