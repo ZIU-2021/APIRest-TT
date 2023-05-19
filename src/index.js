@@ -9,5 +9,5 @@ app.use(express.urlencoded({extended: false}));
 app.use(require('./routes/index'));
 
 //Port configuration
-app.listen(3000);
-console.log('App listening on port 3000')
+app.listen(2000);
+console.log('App listening on port 2000')
